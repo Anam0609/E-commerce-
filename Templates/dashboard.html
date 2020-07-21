@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!--custom styles-->
-    <link rel="stylesheet" type="text/css" href="./main.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='/main.css')}}">
 </head>
 
 <body>
     <!--Navbar starts here-->
     <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="home.html">Mbhaco Designs</a>
+        <a class="navbar-brand" href="dashboard.html">Mbhaco Designs</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,26 +23,29 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#about">About us</a>
+                    <a class="nav-link" href="#">About us</a>
                 </li>
     
                 <li class="nav-item active">
-                    <a class="nav-link" href="/Templates/products.html">Shop now</a>
+                    <a class="nav-link" href="#">Shop now</a>
                 </li>
     
                 <li class="nav-item active">
-                    <a class="nav-link" href="/Templates/checkout.html">Checkout</a>
+                    <a class="nav-link" href="#">Checkout</a>
                 </li>
     
                 <li class="nav-item active">
-                    <a class="nav-link" href="#contact">Contact us</a>
+                    <a class="nav-link" href="#">Contact us</a>
                 </li>
             </ul>
     
             <div class="form-inline my-2 my-lg-0">
-    
-                <a href="Templates/cart.html">
-                    <img id="cart-icon" class="cart" src="./images/cart.png">
+                <a href="{{url_for('login') }}">
+
+                    <p class="btn">Login</p></a>
+
+                <a href="#">
+                    <img id="cart-icon" class="cart" src="{{ url_for ('static', filename='/images/cart.png')}}">
                 </a>
     
                 <p id="cart-total">0</p>
@@ -53,15 +56,12 @@
 
     <!--Hero section-->
     <div class="banner">
-        <img src="/images/background.jpeg">
+        <img src="{{ url_for ('static', filename='/images/xhosa.jpeg')}}">
         <div class="content">
             <h2 class="animation a1">Welcome to African Royalty</h2>
             <p class="animation a2">
                 We have a new range of luxury
             </p>
-            <a class="btn animation a3" href="/Templates/products.html">Shop Now
-    
-            </a>
         </div>
     </div>
     <!--Ends here-->
@@ -72,22 +72,22 @@
         <ul> 
             <li>
                 <a href='https://m.facebook.com/anam.majikijela'>
-                    <img src='/images/facebook (1).png' alt='facebook' />
+                    <img src="{{ url_for ('static', filename='/images/facebook.png')}}" alt='facebook' />
                     </a>
                 </li>
             <li> 
                 <a href='https://codepen.io/Majikijela'>
-                    <img src='/images/codepen.png' alt='codepen' />
+                    <img src="{{ url_for ('static', filename='/images/codepen.png')}}" alt='codepen' />
                     </a>
                 </li>
             <li>
                 <a href='https://github.com/Anam0609'>
-                    <img src='/images/github.png' alt='github' />
+                    <img src="{{ url_for ('static', filename='/images/github.png')}}" alt='github' />
                     </a>
                 </li>
             <li>
                 <a href='https://www.linkedin.com/in/anam-bianca-majikijela-944270153'>
-                    <img src='/images/linkedin.png' alt='linkedin' />
+                    <img src="{{ url_for ('static', filename='/images/linkedin.png')}}" alt='linkedin' />
                     </a>
                 </li>
             </ul>

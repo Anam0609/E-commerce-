@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body{
+  height: 100vh;
+}
 
 .navbar-brand {
   font-family: fantasy;
@@ -67,7 +70,7 @@ h6{
 
 h4{
     display: inline-block;
-    float: right;
+  float : right;
 }
 p{
   text-align: center;
@@ -113,7 +116,7 @@ p{
 .login{
     height: 100vh;
     display: flex;
-    background: url('../images/login.jpeg');
+    background: url("../images/login.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }

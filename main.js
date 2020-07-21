@@ -157,11 +157,7 @@ const keepItemsOnbrowser = () => {
     if (item) {
         document.getElementById('cart-total').textContent = item;
     }
-
-    
 }
-
-
 
 
 // removes items from cart after payment and reloads the page
