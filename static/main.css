@@ -70,7 +70,7 @@ h6{
 
 h4{
     display: inline-block;
-  float : right;
+    float : right;
 }
 p{
   text-align: center;
@@ -116,17 +116,23 @@ p{
 .login{
     height: 100vh;
     display: flex;
-    background: url("../images/login.jpeg");
+    background-image: url("./images/login.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
 }
-
-.register{
-    height: 100vh;
-    display: flex;
-    background: url('../images/register.jpeg');
-    background-size: cover;
-    background-repeat: no-repeat;
+.greet {
+    font-size: 19px;
+    margin: inherit;
+    text-align: center;
+    color: #fff;
+    padding: 20px;
+}
+.register {  
+  height: 100vh;
+  display: flex;
+  background: url("./images/register.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .wrap{
