@@ -1,7 +1,7 @@
 // targeting all products that can be added to the cart
 let shoppingCart = document.querySelectorAll('.add-btn');
 
-// Array of the products
+// A list of my products in arrays
 const Items = [
     {
         name: 'Headwrap & Earrings',
@@ -80,8 +80,9 @@ for (let i = 0; i < shoppingCart.length; i++){
     shoppingCart[i].addEventListener('click', () => {
         // calling the function inside the loop
         cartProducts(Items[i]);  
-        calculateTotal(Items[i]);
+        calculateTotal();
     })
+    
 }
 
 // saving items to the localStorage
@@ -139,11 +140,14 @@ const setItems = (Product) => {
     // converts items/products into a string and sets items into the localSorage 
     localStorage.setItem("productsCart", JSON.stringify(cartItems));
 }
+
 //Calculates the total of the items in my cart
-const calculateTotal = (merchandise) => {
-    console.log('Product price: ', merchandise.price);
-    localStorage.setItem("calculateTotal", merchandise.price)
-}
+const calculateTotal = Items => {
+    
+};
+
+
+
 
 // this function will keep the items in the cart even if the page is reloaded
 const keepItemsOnbrowser = () => {

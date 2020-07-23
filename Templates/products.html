@@ -1,74 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--Bootstrap css-->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+{% extends "base.html" %}
 
-    <link rel="stylesheet" type="text/css" href="/main.css" />
-    <title>Mbhaco Designs|Shop</title>
-  </head>
+{% block styles %}
 
-  <body>
-    <!--Navbar starts here-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="index.html">Mbhaco Designs</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!--custom styles-->
+<link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='main.css')}}" />
+{% endblock %}
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#about">About us</a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="nav-link" href="products.html">Shop now</a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="nav-link" href="checkout.html">Checkout</a>
-          </li>
-
-          <li class="nav-item active">
-            <a class="nav-link" href="#contact">Contact us</a>
-          </li>
-        </ul>
-
-        <div class="form-inline my-2 my-lg-0">
-          
-          <a href="cart.html">
-            <img id="cart-icon" class="cart" src="../images/cart.png" />
-          </a>
-
-          <p id="cart-total">0</p>
-        </div>
-      </div>
-    </nav>
-    <!--Navbar ends here-->
-
+{% block content %}
     <!--Products-->
 
     <h1 class="heading">The Royal Collection</h1>
     <h6 class="heading">For the Kings & Queens</h6>
     <div class="row">
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/accessories-item-8.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/accessories-item-8.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Headwrap & Earrings</strong></h6>
 
@@ -84,7 +29,7 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/men-item2.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item2.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Men Mbhaco Pants</strong></h6>
 
@@ -101,14 +46,13 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/women-item11.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item11.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Skirt & Scarf & Headwrap</strong></h6>
 
           <hr />
 
           <button
-         
             class="btn add-btn cart3"
           >
             Add to Cart
@@ -119,7 +63,7 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/men-item7.png" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item7.png')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Men's 3pc attire</strong></h6>
           <p><small>Excludes accessories</small></p>
@@ -137,9 +81,9 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/women-item6.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item6.jpeg')}}" />
         <div class="box-element product">
-          <h6 class="name"><strong>Modern Mbhaco dress</strong></h6>
+          <h6 class="name"><strong>Modern Mbhaco Dress</strong></h6>
 
           <hr />
 
@@ -154,7 +98,7 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/women-item8.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item8.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Indlovukazi Dress</strong></h6>
 
@@ -171,14 +115,13 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/men-item5.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item5.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Men's plain Black & White 3pc</strong></h6>
             <p><small>Excludes accessories</small></p>
           <hr />
 
           <button
-            
             class="btn add-btn cart7"
           >
             Add to Cart
@@ -189,14 +132,13 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/women-item2.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item2.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Modern Ball Gown</strong></h6>
 
           <hr />
 
           <button
-            
             class="btn add-btn cart8 "
           >
             Add to Cart
@@ -207,14 +149,13 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/men-item6.png" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item6.png')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Elegant <span style="color: red;">New</span> pattern</strong></h6>
 
           <hr />
 
           <button
-            
             class="btn add-btn cart9"
           >
             Add to Cart
@@ -225,14 +166,13 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/accessories-item4.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/accessories-item4.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>King's 2pc</strong></h6>
 
           <hr />
 
           <button
-          
             class="btn add-btn cart10"
           >
             Add to Cart
@@ -243,14 +183,13 @@
       </div>
 
       <div class="col-lg-4">
-        <img class="thumbnail" src="/images/women-item3.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item3.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Queen's 2pc Dress</strong></h6>
 
           <hr />
 
           <button
-          
             class="btn add-btn cart11"
           >
             Add to Cart
@@ -260,7 +199,7 @@
         </div>
       </div>
     <div class="col-lg-4">
-        <img class="thumbnail" src="/images/men-item1.jpeg" />
+        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item1.jpeg')}}" />
         <div class="box-element product">
             <h6 class="name"><strong>Unisex Scarf</strong></h6>
     
@@ -275,54 +214,4 @@
     </div>
     </div>
 
-    <!--footer-->
-    <section class="footer bg-dark">
-      <p>Designed and Developed by Anam Majikijela</p>
-      <ul>
-        <li>
-          <a href="https://m.facebook.com/anam.majikijela">
-            <img src="/images/facebook (1).png" alt="facebook" />
-          </a>
-        </li>
-        <li>
-          <a href="https://codepen.io/Majikijela">
-            <img src="/images/codepen.png" alt="codepen" />
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/Anam0609">
-            <img src="/images/github.png" alt="github" />
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.linkedin.com/in/anam-bianca-majikijela-944270153"
-          >
-            <img src="/images/linkedin.png" alt="linkedin" />
-          </a>
-        </li>
-      </ul>
-    </section>
-
-    <!--bootstrap scripts-->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-
-    <script src="/main.js"></script>
-  </body>
-</html>
+ {% endblock content %}

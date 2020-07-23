@@ -35,6 +35,17 @@ class MyUsers(db.Model, UserMixin):
   fullname = db.Column(db.String(20), nullable=False)
   email = db.Column(db.String(30), nullable=False, unique=True)
   password = db.Column(db.String(20), nullable=False)
+ 
+
+# database table for customer orders
+class CustomerOrder(db.Model):
+  id = db.Column(db.Integer, primary_key=True)
+  fullname = db.Column(db.String(20), nullable=False)
+  email = db.Column(db.String(30), nullable=False)
+  address = db.Column(db.String(20), nullable=False)
+  province = db.Column(db.String(20), nullable=False)
+  city = db.Column(db.String(20), nullable=False)
+  zipcode = db.Column(db.String(8), nullable=False)
 
 #helps to identify the user who logged in
 @login_manager.user_loader
@@ -55,16 +66,23 @@ class RegisteForm(FlaskForm):
     fullname = StringField('FullName', validators=[InputRequired(), Length(min=10, max=20)])
     email = StringField('Email', validators=[InputRequired(), Email(message="Invalid email"),Length(max=30)])
     password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
- 
 
+ # the checkout form
+class CustomerForm(FlaskForm):
+    fullname = StringField('FullName', validators=[InputRequired(), Length(max=20)])
+    email = StringField('Email', validators=[InputRequired(), Email(message="Invalid email"),Length(max=30)])
+    address = StringField('Address', validators=[InputRequired(), Length(max=20)])
+    province = StringField('Province', validators=[InputRequired(), Length(max=20)])
+    city = StringField('City', validators=[InputRequired(), Length(max=20)])
+    zipcode = StringField('Zipcode', validators=[InputRequired(), Length(max=20)])
+    
+ # app routes for my webpages
 
-# my app routes to my templates
 @app.route('/')
 # function to render the html template
 def dashboard():
     return render_template('dashboard.html')
 
-# my app routes to my templates
 @app.route('/index')
 # a user is required to login(protected route)
 @login_required
@@ -74,6 +92,27 @@ def index():
 
 
 # my app routes to my templates
+@app.route('/register', methods=['GET', 'POST'])
+# function to render the html template
+def register():
+    form = RegisteForm()
+    # checks if the form is submitted or not
+    if form.validate_on_submit():
+       # security feature for hashing passwords
+       hashed_password = generate_password_hash(form.password.data, method='sha256')
+
+       User = MyUsers(username=form.username.data, fullname=form.fullname.data, email=form.email.data, password=hashed_password)
+       # adds new user to the database
+       db.session.add(User)
+
+       # saves/ commits new user to the database
+       db.session.commit()
+
+       # after signing up, you are immediately redirected to the login screen
+       return redirect(url_for('login'))
+    return render_template('register.html', form=form)
+
+
 @app.route('/login', methods=['GET', 'POST'])
 # function to render the html template
 def login():
@@ -95,28 +134,55 @@ def login():
         return "Credentials don't match!"
     return render_template('login.html', form=form)
 
+# logout app route
 @app.route('/logout')
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('dashboard'))
 
-# my app routes to my templates
-@app.route('/register', methods=['GET', 'POST'])
+
+@app.route('/products')
+# a user is required to login(protected route)
+@login_required
 # function to render the html template
-def register():
-    form = RegisteForm()
+def products():
+    return render_template('products.html')
+
+
+@app.route('/checkout', methods=['GET', 'POST'])
+@login_required
+# function to render the html template
+def checkout():
+    form = CustomerForm()
     # checks if the form is submitted or not
     if form.validate_on_submit():
-       # security feature for hashing passwords
-       hashed_password = generate_password_hash(form.password.data, method='sha256')
-       User = MyUsers(username=form.username.data, fullname=form.fullname.data, email=form.email.data, password=hashed_password)
+      
+       userOrder = CustomerOrder(fullname=form.fullname.data, email=form.email.data, address=form.address.data,
+       province=form.province.data, city=form.city.data, zipcode=form.zipcode.data)
        # adds new user to the database
-       db.session.add(User)
+       db.session.add(userOrder)
+
        # saves/ commits new user to the database
        db.session.commit()
-       return '<h1> new user is created </h1>'
-    return render_template('register.html', form=form)
+
+       # after signing up, you are immediately redirected to the login screen
+       return redirect(url_for('index'))
+    return render_template('checkout.html', form=form)
+
+@app.route('/contact')
+# function to render the html template
+def contact():
+    return render_template('contact.html')
+
+@app.route('/cart')
+@login_required
+def cart():
+    return render_template('cart.html')
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 
 

@@ -38,19 +38,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="{{url_for('about')}}">About us</a>
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Shop now</a>
+            <a class="nav-link" href="{{url_for('products')}}">Shop now</a>
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Checkout</a>
+            <a class="nav-link" href="{{url_for('checkout')}}">Checkout</a>
           </li>
 
           <li class="nav-item active">
-            <a class="nav-link" href="#">Contact us</a>
+            <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
           </li>
         </ul>
 
@@ -70,7 +70,7 @@
             <p class="btn">Logout</p>
           </a>
 
-          <a href="#">
+          <a href="{{url_for('cart')}}">
             <img
               id="cart-icon"
               class="cart"
@@ -84,10 +84,11 @@
     </nav>
     <!--Navbar ends here-->
 
-    <section>
-      {% block content%} {% endblock content%}
-    </section>
-
+    <div>
+      {% block content %} 
+    
+      {% endblock %}
+    </div>
     <!--footer-->
     <section class="footer bg-dark">
       <p>Designed and Developed by Anam Majikijela</p>
@@ -147,6 +148,6 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
-    <script src="main.js"></script>
+    <script src="/static/main.js"></script>
   </body>
 </html>

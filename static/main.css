@@ -120,13 +120,7 @@ p{
     background-size: cover;
     background-repeat: no-repeat;
 }
-.greet {
-    font-size: 19px;
-    margin: inherit;
-    text-align: center;
-    color: #fff;
-    padding: 20px;
-}
+
 .register {  
   height: 100vh;
   display: flex;
@@ -183,7 +177,6 @@ form p{
 
 .thumbnail{
     width: 100%;
-
     box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
 }
 
@@ -247,6 +240,9 @@ form p{
 	display: none!important;
 }
 
+.card-img-top{
+  width: 61%;
+}
 
 .footer {
   padding: 20px 114px;
