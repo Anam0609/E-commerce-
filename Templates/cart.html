@@ -7,18 +7,15 @@
   href="{{ url_for ('static', filename='main.css')}}"
 />
 {% endblock %} {% block content %}
-
+<div class="cart-bg">
 <div class="container">
   <h1 class="heading">Your Collection</h1>
   <div class="row">
     <div class="col-lg-12">
       <div class="box-element">
         <a class="btn" href="{{url_for('products')}}"
-          >&#x2190; Continue Shopping</a
-        >
+          >&#x2190; Continue Shopping</a>
 
-        <br />
-        <br />
         <table class="table">
           <tr>
             <th>
@@ -34,33 +31,28 @@
             </th>
           </tr>
         </table>
-      </div>
+      
 
-      <br />
-      <div class="box-element">
-        <div class="cart-row">
-          <div style="flex: 2;"></div>
-          <div style="flex: 2;"><strong>Item</strong></div>
-          <div style="flex: 1;"><strong>Price</strong></div>
-          <div style="flex: 1;"><strong>Quantity</strong></div>
-          <div style="flex: 1;"><strong>Total</strong></div>
-        </div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Item</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+            <th scope="col">Total</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
 
-        <div class="cart-row">
-          <div style="flex: 1;">
-            <img class="row-image" src="/images/2+placeholder.png" />
-          </div>
-          <div style="flex: 2;"><p>Product1</p></div>
-          <div style="flex: 2;"><p>R0.00</p></div>
-          <div style="flex: 1;">
-            <p class="quantity">0</p>
-          </div>
-          <div style="flex: 1;">
-            <p><strong>R0.00</strong></p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </tr>
+        </tbody>
+      </table>
   </div>
-</div>
-{% endblock content %}
+  </div>
+  </div>
+  </div>
+
+  {% endblock content %}
+

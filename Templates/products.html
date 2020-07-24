@@ -1,18 +1,80 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block styles %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!--custom styles-->
-<link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='main.css')}}" />
-{% endblock %}
+  <!--Bootstrap css-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-{% block content %}
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!--custom styles-->
+  <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='main.css')}}" />
+</head>
+
+<body>
+  <!--Navbar starts here-->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ url_for('index')}}">Mbhaco Designs</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('about')}}">About us</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('products')}}">Shop now</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('checkout')}}">Checkout</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
+        </li>
+      </ul>
+
+      <div class="form-inline my-2 my-lg-0">
+        <p style="
+              font-size: 19px;
+              margin: inherit;
+              text-align: center;
+              color: #fff;
+              padding: 20px;
+            ">
+          Hello, {{name}}
+        </p>
+        <a href="{{url_for('logout')}}">
+          <p class="btn">Logout</p>
+        </a>
+
+        <a href="{{url_for('cart')}}">
+          <img id="cart-icon" class="cart" src="{{ url_for ('static', filename='/images/cart.png')}}" />
+        </a>
+
+        <p id="cart-total">0</p>
+      </div>
+    </div>
+  </nav>
+  <!--Navbar ends here-->
+
     <!--Products-->
-
-    <h1 class="heading">The Royal Collection</h1>
-    <h6 class="heading">For the Kings & Queens</h6>
+  <div class="container">
+  <div class="clothes">
+    <h1 class="heading" style="color: red;" data-aos="zoom-in">The Royal Collection</h1>
+    <h6 class="heading" style="color: red;" data-aos="zoom-in-up">For the Kings & Queens</h6>
     <div class="row">
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-up" >
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/accessories-item-8.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Headwrap & Earrings</strong></h6>
@@ -28,7 +90,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div data-aos="fade-down" class="col-lg-4">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item2.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Men Mbhaco Pants</strong></h6>
@@ -45,7 +107,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-right" >
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item11.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Skirt & Scarf & Headwrap</strong></h6>
@@ -62,11 +124,10 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4"data-aos="fade-down">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item7.png')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Men's 3pc attire</strong></h6>
-          <p><small>Excludes accessories</small></p>
 
           <hr />
 
@@ -80,7 +141,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-up" >
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item6.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Modern Mbhaco Dress</strong></h6>
@@ -97,7 +158,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-left" >
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item8.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Indlovukazi Dress</strong></h6>
@@ -114,11 +175,10 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-down">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item5.jpeg')}}" />
         <div class="box-element product">
-          <h6 class="name"><strong>Men's plain Black & White 3pc</strong></h6>
-            <p><small>Excludes accessories</small></p>
+          <h6 class="name"><strong>Black & White 3pc</strong></h6>
           <hr />
 
           <button
@@ -131,7 +191,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-up">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item2.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Modern Ball Gown</strong></h6>
@@ -148,7 +208,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-right">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item6.png')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Elegant <span style="color: red;">New</span> pattern</strong></h6>
@@ -165,7 +225,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-up">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/accessories-item4.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>King's 2pc</strong></h6>
@@ -182,7 +242,7 @@
         </div>
       </div>
 
-      <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-left">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item3.jpeg')}}" />
         <div class="box-element product">
           <h6 class="name"><strong>Queen's 2pc Dress</strong></h6>
@@ -198,7 +258,7 @@
           <h4 class="price"><strong>R2000.00</strong></h4>
         </div>
       </div>
-    <div class="col-lg-4">
+      <div class="col-lg-4" data-aos="fade-right">
         <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item1.jpeg')}}" />
         <div class="box-element product">
             <h6 class="name"><strong>Unisex Scarf</strong></h6>
@@ -211,7 +271,54 @@
             <a class="btn" href="#">View</a>
             <h4 class="price"><strong>R200.00</strong></h4>
         </div>
+      </div>
     </div>
-    </div>
+  </div>
+</div>
+    <!--footer-->
+    <section class="footer bg-dark">
+      <p>Designed and Developed by Anam Majikijela</p>
+      <ul>
+        <li>
+          <a href="https://m.facebook.com/anam.majikijela">
+            <img src="{{ url_for ('static', filename='/images/facebook.png')}}" alt="facebook" />
+          </a>
+        </li>
+        <li>
+          <a href="https://codepen.io/Majikijela">
+            <img src="{{ url_for ('static', filename='/images/codepen.png')}}" alt="codepen" />
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/Anam0609">
+            <img src="{{ url_for ('static', filename='/images/github.png')}}" alt="github" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/anam-bianca-majikijela-944270153">
+            <img src="{{ url_for ('static', filename='/images/linkedin.png')}}" alt="linkedin" />
+          </a>
+        </li>
+      </ul>
+    </section>
+    
+    <!--bootstrap scripts-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      
+      <script>
+      AOS.init();
+      </script>
+      <script src="/static/main.js"></script>
+    </body>
+    
+    </html>
 
- {% endblock content %}
+
+ 

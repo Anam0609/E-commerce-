@@ -1,6 +1,3 @@
-// targeting all products that can be added to the cart
-let shoppingCart = document.querySelectorAll('.add-btn');
-
 // A list of my products in arrays
 const Items = [
     {
@@ -74,13 +71,18 @@ const Items = [
         quantity: 0
     }
 ]
+
+// targeting all products that can be added to the cart
+let shoppingCart = document.querySelectorAll('.add-btn');
+
+
 // Loops through the cart items
 for (let i = 0; i < shoppingCart.length; i++){
     // adding a onclick to all the add to cart buttons
     shoppingCart[i].addEventListener('click', () => {
         // calling the function inside the loop
         cartProducts(Items[i]);  
-        calculateTotal();
+        calculateTotal(Items[i]);
     })
     
 }
@@ -142,11 +144,18 @@ const setItems = (Product) => {
 }
 
 //Calculates the total of the items in my cart
-const calculateTotal = Items => {
-    
+const calculateTotal = Product => {
+    let cart_total = localStorage.getItem('calculateTotal');
+
+    // if there are items in the cart, they will sum up together to calculate the total
+    if (cart_total != null) {
+        // changing the cart-total from a string to an interger in order to calculate the total
+        cart_total = parseInt(cart_total);
+        localStorage.setItem("calculateTotal", cart_total + Product.price);
+    } else {
+        localStorage.setItem("calculateTotal", Product.price); 
+    } 
 };
-
-
 
 
 // this function will keep the items in the cart even if the page is reloaded
@@ -163,6 +172,10 @@ const keepItemsOnbrowser = () => {
     }
 }
 
+const displayItems = () => {
+    
+}
+
 
 // removes items from cart after payment and reloads the page
 const removeFromCart = () => {
@@ -174,7 +187,6 @@ const removeFromCart = () => {
     // reloads page
     location.reload();
 }
-
 
 // calling the function
 keepItemsOnbrowser();

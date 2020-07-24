@@ -2,9 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-body{
-  height: 100vh;
+ 
 }
 
 .navbar-brand {
@@ -12,7 +10,7 @@ body{
 }
 
 li a:hover {
-  background: red;
+  background: #cccc;
 }
 
 #cart-icon {
@@ -56,7 +54,7 @@ li a:hover {
 .heading {
   font-family: 'Times New Roman';
   text-align: center;
-  color: #000;
+  color: #fff;
   font-size: 50px;
   font-weight: 800;
   letter-spacing: 1px;
@@ -113,6 +111,7 @@ p{
   color: #fff;
 }
 
+/* background images*/
 .login{
     height: 100vh;
     display: flex;
@@ -129,8 +128,26 @@ p{
   background-repeat: no-repeat;
 }
 
+.cart-bg {  
+  height: 100vh;
+  display: flex;
+  background: url("./images/p.bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.shop {  
+  background: url("./images/p.bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.clothes{
+  background: #000;
+}
+
 .wrap{
-    max-width: 350px;
+    max-width: 400px;
     border-radius: 20px;
     margin: auto;
     background: rgba(0,0,0,.8);
@@ -138,7 +155,6 @@ p{
     padding: 40px;
     color: #fff;
     margin-top: 50px;
-    
 }
 
 .wrap h2{
@@ -177,6 +193,7 @@ form p{
 
 .thumbnail{
     width: 100%;
+    height: 70%;
     box-shadow: -1px -3px 5px -2px rgba(214,214,214,1);
 }
 
@@ -191,7 +208,6 @@ form p{
 
 .col-lg-4, .col-lg-6, .col-lg-12{
     margin-top: 10px;
-    margin-bottom: 50px;
 }
 
 .row-image{
@@ -240,16 +256,20 @@ form p{
 	display: none!important;
 }
 
-.card-img-top{
-  width: 61%;
-}
 
+/*cart*/
+.table{
+  margin-top: 70px;
+  margin-bottom: initial;
+}
 .footer {
-  padding: 20px 114px;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    position: relative;
+    color: #fff;
+    bottom: 0;
+    padding: 20px 40px;
+    background: #343a40!important;
+    flex-direction: column-reverse;
+    text-align: center;
 }
 
 .footer ul {
@@ -270,7 +290,7 @@ form p{
 
 .footer ul li img {
   filter: invert(1);
-  max-width: 20px;
+  max-width: 30px;
 }
 
 @media (max-width: 991px) {
@@ -283,15 +303,19 @@ form p{
   }
 
   .banner .content h2 {
-    font-size: 36px;
+    font-size: 25px;
   }
 
   .banner .content p {
-    font-size: 16px;
+    font-size: 10px;
   }
+
+  .wrap{
+    max-width: min-content;
+  }
+
   .footer {
-    padding: 20px 50px;
-    background: #12222d;
+    padding: 29px 50px;
     flex-direction: column-reverse;
     text-align: center;
   }
