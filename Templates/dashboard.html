@@ -7,6 +7,11 @@
     <!--Bootstrap css-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!--custom styles-->
     <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='main.css')}}">
 </head>
@@ -23,7 +28,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('about')}}">About us</a>
+                    <a class="nav-link" href="#">About us</a>
                 </li>
             
                 <li class="nav-item active">
@@ -35,7 +40,7 @@
                 </li>
             
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url_for('contact')}}l">Contact us</a>
+                    <a class="nav-link" href="#">Contact us</a>
                 </li>
             </ul>
 
@@ -57,9 +62,9 @@
     <div class="banner">
         <img src="{{ url_for ('static', filename='/images/xhosa.jpeg')}}">
         <div class="content">
-            <h2 class="animation a1">Welcome to African Royalty</h2>
-            <p class="animation a2">
-                We have a new range of luxury
+            <h2 data-aos="fade-left">Welcome to African Royalty</h2>
+            <p data-aos="fade-right">
+         Join the MD family and shop till you drop!       
             </p>
         </div>
     </div>
@@ -70,22 +75,22 @@
         <p>Designed and Developed by Anam Majikijela</p>
         <ul> 
             <li>
-                <a href='https://m.facebook.com/anam.majikijela'>
+                <a href='https://m.facebook.com/anam.majikijela' target="_blank">
                     <img src="{{ url_for ('static', filename='/images/facebook.png')}}" alt='facebook' />
                     </a>
                 </li>
             <li> 
-                <a href='https://codepen.io/Majikijela'>
+                <a href='https://codepen.io/Majikijela' target="_blank">
                     <img src="{{ url_for ('static', filename='/images/codepen.png')}}" alt='codepen' />
                     </a>
                 </li>
             <li>
-                <a href='https://github.com/Anam0609'>
+                <a href='https://github.com/Anam0609' target="_blank">
                     <img src="{{ url_for ('static', filename='/images/github.png')}}" alt='github' />
                     </a>
                 </li>
             <li>
-                <a href='https://www.linkedin.com/in/anam-bianca-majikijela-944270153'>
+                <a href='https://www.linkedin.com/in/anam-bianca-majikijela-944270153' target="_blank">
                     <img src="{{ url_for ('static', filename='/images/linkedin.png')}}" alt='linkedin' />
                     </a>
                 </li>
@@ -104,6 +109,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+        <script>
+            AOS.init();
+        </script>
     <script src="main.js"></script>
     
 </body>

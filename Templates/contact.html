@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block styles %}
+
+<!--custom styles-->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for ('static', filename='main.css')}}"
+/>
+{% endblock %} {% block content %}
+<div class="contact">
+<div class="contact-wrap" data-aos="flip-left">
+      <h2>Contact Us</h2>
+      <form
+        action="https://formspree.io/biancamajikijela95@gmail.com"
+        method="POST"
+      >
+        <div>
+          <input type="text" name="name" placeholder="Full Name" required />
+
+          <input
+            type="text"
+            name="_replyto"
+            placeholder="Email Address"
+            required
+          />
+
+          <input type="text" name="phone" placeholder="Contact Number" />
+
+          <input type="text" placeholder="Write your message here..." />
+
+          <input class="btn" type="submit" value="Submit" />
+        </div>
+      </form>
+      </div>
+</div>
+
+{% endblock content %}

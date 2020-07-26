@@ -17,11 +17,11 @@
 <div class="banner">
   <img src="{{ url_for ('static', filename='/images/background.jpeg')}}" />
   <div class="content">
-    <h2 class="animation a1">Welcome {{name}} to African Royalty</h2>
-    <p class="animation a2">
+    <h2 data-aos="fade-up">Welcome {{name}} to African Royalty</h2>
+    <p data-aos="fade-down">
       We have a new range of luxury
     </p>
-    <a class="btn animation a3" href="{{ url_for('products')}}">Shop Now </a>
+    <a class="btn" data-aos="flip-left" href="{{ url_for('products')}}">Shop Now </a>
   </div>
 </div>
 <!--Ends here-->

@@ -11,10 +11,13 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <!--AOS css-->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <!--AOS js-->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 
     <!--custom styles-->
     <link
@@ -71,6 +74,7 @@
           >
             Hello, {{name}}
           </p>
+          <br>
           <a href="{{url_for('logout')}}">
             <p class="btn">Logout</p>
           </a>
@@ -94,42 +98,30 @@
     
       {% endblock %}
     </div>
+
+    
     <!--footer-->
     <section class="footer bg-dark">
       <p>Designed and Developed by Anam Majikijela</p>
       <ul>
         <li>
-          <a href="https://m.facebook.com/anam.majikijela">
-            <img
-              src="{{ url_for ('static', filename='/images/facebook.png')}}"
-              alt="facebook"
-            />
+          <a href="https://m.facebook.com/anam.majikijela" target="_blank">
+            <img src="{{ url_for ('static', filename='/images/facebook.png')}}" alt="facebook" />
           </a>
         </li>
         <li>
-          <a href="https://codepen.io/Majikijela">
-            <img
-              src="{{ url_for ('static', filename='/images/codepen.png')}}"
-              alt="codepen"
-            />
+          <a href="https://codepen.io/Majikijela" target="_blank">
+            <img src="{{ url_for ('static', filename='/images/codepen.png')}}" alt="codepen" />
           </a>
         </li>
         <li>
-          <a href="https://github.com/Anam0609">
-            <img
-              src="{{ url_for ('static', filename='/images/github.png')}}"
-              alt="github"
-            />
+          <a href="https://github.com/Anam0609" target="_blank">
+            <img src="{{ url_for ('static', filename='/images/github.png')}}" alt="github" />
           </a>
         </li>
         <li>
-          <a
-            href="https://www.linkedin.com/in/anam-bianca-majikijela-944270153"
-          >
-            <img
-              src="{{ url_for ('static', filename='/images/linkedin.png')}}"
-              alt="linkedin"
-            />
+          <a href="https://www.linkedin.com/in/anam-bianca-majikijela-944270153" target="_blank">
+            <img src="{{ url_for ('static', filename='/images/linkedin.png')}}" alt="linkedin" />
           </a>
         </li>
       </ul>

@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% block styles %}
+
+<!--custom styles-->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for ('static', filename='main.css')}}"
+/>
+{% endblock %} {% block content %}
+<div class="shop">
+  <div class="container">
+    <h1 class="heading"data-aos="fade-up">Get to know us</h1>
+    <div class="about" data-aos="fade-left">
+      <div class="contentBx">
+        <h2 class="heading">About us</h2>
+        <h3 class="text">
+          Greetings from Mbhaco Designs!
+        </h3>
+        <br />
+        <p class="text">
+          Our journey in online shopping started in 2020 when we saw that there was a lack of cultural online shopping 
+          stores in South Africa, We then decided to create one and that we want to show the world our heritage but overall
+          we have been around since 2014. 
+        </p>
+
+            <h3 class="heading">What we do: </h3>
+          <p class="text">
+          We create and design custom Xhosa attires for anyone who would likes Xhosa patterns or just patterns in general. 
+          We have a variety of patterns and colors to choose from and we also have accessories to go well with our designs.
+          We also do custom designs for celebrations such as weddings, matric balls etc. 
+        </p>
+      </div>
+      <div class="imgBx" data-aos="fade-right"></div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

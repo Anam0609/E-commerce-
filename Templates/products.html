@@ -1,324 +1,349 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "base.html" %} {% block styles %}
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!--custom styles-->
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for ('static', filename='main.css')}}"
+/>
+{% endblock %} {% block content %}
+<div class="container">
+  <h1 style="color: #000;" class="heading"> The Royal Collection</h1>
+  <!-- Card deck -->
+  <div class="card-deck row">
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/accessories-item8.jpeg')}}"
+            alt="Card image cap"
+          />
+          
+        </div>
 
-  <!--Bootstrap css-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
-  
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <!--custom styles-->
-  <link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='main.css')}}" />
-</head>
-
-<body>
-  <!--Navbar starts here-->
-  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="{{ url_for('index')}}">Mbhaco Designs</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('about')}}">About us</a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('products')}}">Shop now</a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('checkout')}}">Checkout</a>
-        </li>
-
-        <li class="nav-item active">
-          <a class="nav-link" href="{{url_for('contact')}}">Contact us</a>
-        </li>
-      </ul>
-
-      <div class="form-inline my-2 my-lg-0">
-        <p style="
-              font-size: 19px;
-              margin: inherit;
-              text-align: center;
-              color: #fff;
-              padding: 20px;
-            ">
-          Hello, {{name}}
-        </p>
-        <a href="{{url_for('logout')}}">
-          <p class="btn">Logout</p>
-        </a>
-
-        <a href="{{url_for('cart')}}">
-          <img id="cart-icon" class="cart" src="{{ url_for ('static', filename='/images/cart.png')}}" />
-        </a>
-
-        <p id="cart-total">0</p>
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title">Headwrap & Earrings</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R100.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+          <button type="button" class="btn add-btn btn-md">View Item<a href="{{ url_for ('static', filename='/images/accessories-item-8.jpeg')}}"
+            data-lightbox="accessories-item-8.jpeg" data-title="My caption"></a></button>
+        </div>
       </div>
+      <!-- Card -->
     </div>
-  </nav>
-  <!--Navbar ends here-->
 
-    <!--Products-->
-  <div class="container">
-  <div class="clothes">
-    <h1 class="heading" style="color: red;" data-aos="zoom-in">The Royal Collection</h1>
-    <h6 class="heading" style="color: red;" data-aos="zoom-in-up">For the Kings & Queens</h6>
-    <div class="row">
-      <div class="col-lg-4" data-aos="fade-up" >
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/accessories-item-8.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Headwrap & Earrings</strong></h6>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/men-item2.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
 
-          <hr />
-
-          <button
-            class="btn add-btn cart1">
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R100.00</strong></h4>
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title">Men Mbhaco Pants</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R100.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
         </div>
       </div>
-
-      <div data-aos="fade-down" class="col-lg-4">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item2.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Men Mbhaco Pants</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart2"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R100.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-right" >
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item11.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Skirt & Scarf & Headwrap</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart3"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R400.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4"data-aos="fade-down">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item7.png')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Men's 3pc attire</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart4"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R400.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up" >
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item6.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Modern Mbhaco Dress</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart5"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R300.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-left" >
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item8.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Indlovukazi Dress</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart6"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R2500.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-down">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item5.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Black & White 3pc</strong></h6>
-          <hr />
-
-          <button
-            class="btn add-btn cart7"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R600.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item2.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Modern Ball Gown</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart8 "
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R2000.00</strong></h>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-right">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item6.png')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Elegant <span style="color: red;">New</span> pattern</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart9"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R1000.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-up">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/accessories-item4.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>King's 2pc</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart10"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R300.00</strong></h4>
-        </div>
-      </div>
-
-      <div class="col-lg-4" data-aos="fade-left">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/women-item3.jpeg')}}" />
-        <div class="box-element product">
-          <h6 class="name"><strong>Queen's 2pc Dress</strong></h6>
-
-          <hr />
-
-          <button
-            class="btn add-btn cart11"
-          >
-            Add to Cart
-          </button>
-          <a class="btn" href="#">View</a>
-          <h4 class="price"><strong>R2000.00</strong></h4>
-        </div>
-      </div>
-      <div class="col-lg-4" data-aos="fade-right">
-        <img class="thumbnail" src="{{ url_for ('static', filename='/images/men-item1.jpeg')}}" />
-        <div class="box-element product">
-            <h6 class="name"><strong>Unisex Scarf</strong></h6>
-    
-            <hr />
-    
-            <button class="btn add-btn cart12">
-                Add to Cart
-            </button>
-            <a class="btn" href="#">View</a>
-            <h4 class="price"><strong>R200.00</strong></h4>
-        </div>
-      </div>
+      <!-- Card -->
     </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/women-item11.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title">Skirt & Scarf & Headwrap</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R400.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/men-item5.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Men 3pc attire</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R400.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/women-item6.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Modern Mbhaco Dress</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R300.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/women-item8.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Indlovukazi Dress</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R2500.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/men-item7.png')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Men's Black & White 3pc</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R600.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/women-item2.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Modern Ball Gown</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R2000.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/men-item6.png')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Elegant New pattern</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R1000.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+
+      <!-- Card -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/accessories-item4.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">King's 2pc</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R300.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/women-item3.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Queen's 2pc Dress</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R100.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <!-- Card -->
+      <div class="card">
+        <!--Card image-->
+        <div class="view overlay">
+          <img
+            class="card-img-top"
+            src="{{ url_for ('static', filename='/images/men-item1.jpeg')}}"
+            alt="Card image cap"
+          />
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body">
+          <!--Title-->
+          <h2 class="card-title card-text">Unisex Scarf</h2>
+          <!--Text-->
+          <p class="card-text"><strong>R200.00</strong></p>
+          <!--buttons-->
+          <button type="button" class="btn add-btn btn-md">Add to Cart</button>
+        </div>
+      </div>
+      <!-- Card -->
   </div>
+  <!-- Card deck -->
 </div>
-    <!--footer-->
-    <section class="footer bg-dark">
-      <p>Designed and Developed by Anam Majikijela</p>
-      <ul>
-        <li>
-          <a href="https://m.facebook.com/anam.majikijela">
-            <img src="{{ url_for ('static', filename='/images/facebook.png')}}" alt="facebook" />
-          </a>
-        </li>
-        <li>
-          <a href="https://codepen.io/Majikijela">
-            <img src="{{ url_for ('static', filename='/images/codepen.png')}}" alt="codepen" />
-          </a>
-        </li>
-        <li>
-          <a href="https://github.com/Anam0609">
-            <img src="{{ url_for ('static', filename='/images/github.png')}}" alt="github" />
-          </a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/in/anam-bianca-majikijela-944270153">
-            <img src="{{ url_for ('static', filename='/images/linkedin.png')}}" alt="linkedin" />
-          </a>
-        </li>
-      </ul>
-    </section>
-    
-    <!--bootstrap scripts-->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-      
-      <script>
-      AOS.init();
-      </script>
-      <script src="/static/main.js"></script>
-    </body>
-    
-    </html>
+</div>
 
-
- 
+{% endblock %}

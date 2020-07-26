@@ -147,7 +147,7 @@ def logout():
 @login_required
 # function to render the html template
 def products():
-    return render_template('products.html')
+    return render_template('products.html', name=current_user.username)
 
 
 @app.route('/checkout', methods=['GET', 'POST'])
@@ -168,21 +168,21 @@ def checkout():
 
        # after signing up, you are immediately redirected to the login screen
        return redirect(url_for('index'))
-    return render_template('checkout.html', form=form)
+    return render_template('checkout.html', form=form, name=current_user.username)
 
 @app.route('/contact')
 # function to render the html template
 def contact():
-    return render_template('contact.html')
+    return render_template('contact.html', name=current_user.username)
 
 @app.route('/cart')
 @login_required
 def cart():
-    return render_template('cart.html')
+    return render_template('cart.html', name=current_user.username )
 
 @app.route('/about')
 def about():
-    return render_template('about.html')
+    return render_template('about.html', name=current_user.username)
 
 
 
