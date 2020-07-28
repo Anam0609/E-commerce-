@@ -1,53 +1,55 @@
-{% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-
-{% block styles %}
+{% extends "base.html" %} {% import "bootstrap/wtf.html" as wtf %} {% block
+styles %}
 <!--custom styles-->
-<link rel="stylesheet" type="text/css" href="{{ url_for ('static', filename='main.css')}}" />
-{% endblock %}
-
-{% block content %}
+<link
+  rel="stylesheet"
+  type="text/css"
+  href="{{ url_for ('static', filename='main.css')}}"
+/>
+{% endblock %} {% block content %}
 <div class="shop">
-<!--Content-->
-<h3 data-aos="fade-right" class="heading" style="color: #fff;">Customer Information</h3>
+  <!--Content-->
+  <h3 data-aos="fade-right" class="heading" style="color: #fff;">
+    Customer Information
+  </h3>
 
-<div class="check-wrap" data-aos="flip-up">
-  <form method="POST" action="/checkout">
-    {{form.hidden_tag()}}
-    {{wtf.form_field(form.fullname)}} 
-     {{wtf.form_field(form.email)}}
-    <div id="delivery-info">
-      <hr />
-      <p>Delivery Information:</p>
-      <hr />
-      <div class="form-field">
-    {{wtf.form_field(form.address)}}
+  <div class="check-wrap" data-aos="flip-up">
+    <form method="POST" action="/checkout">
+      {{form.hidden_tag()}} {{wtf.form_field(form.fullname)}}
+      {{wtf.form_field(form.email)}}
+      <div id="delivery-info">
+        <hr />
+        <p>Delivery Information:</p>
+        <hr />
+        <div class="form-field">
+          {{wtf.form_field(form.address)}}
+        </div>
+
+        <div class="form-field">
+          {{wtf.form_field(form.province)}}
+        </div>
+
+        <div class="form-field">
+          {{wtf.form_field(form.city)}}
+        </div>
+
+        <div class="form-field">
+          {{wtf.form_field(form.zipcode)}}
+        </div>
       </div>
 
-      <div class="form-field">
-        {{wtf.form_field(form.province)}}
-      </div>
-
-      <div class="form-field">
-        {{wtf.form_field(form.city)}}
-      </div>
-
-      <div class="form-field">
-        {{wtf.form_field(form.zipcode)}}
-      </div>
-    </div>
-  
-
-  <div class="wrap" id="payment-info">
+      <div class="wrap" id="payment-info">
         <small>Payment Options</small>
         <input
-        type="submit"
-        class="btn btn-block"
-        value="Make payment"
+          onclick="payment()"
+          type="submit"
+          class="btn btn-block"
+          value="Make payment"
         />
-    </div>
-  </form>
+      </div>
+    </form>
+  </div>
 </div>
-</div>
+
 <!--Content ends here-->
 {% endblock content %}

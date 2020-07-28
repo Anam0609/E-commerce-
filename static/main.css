@@ -192,10 +192,10 @@ p {
 .check-wrap{
     border-radius: 20px;
     margin: auto;
-    width: 50%;
+    width: fit-content;
     background: rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
-    padding: 100px;
+    padding: 40px;
     color: #fff;
 }
 
@@ -369,7 +369,7 @@ margin-bottom: 20px;
 }
 
 .card-img-top {
-  height: 360px;
+  height: 500px;
 }
 
 .card-title {
@@ -423,6 +423,10 @@ p .card-text {
 
   .wrap {
     max-width: min-content;
+  }
+
+  .check-wrap{
+    width:91%;
   }
 
   .footer {

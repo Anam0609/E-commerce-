@@ -220,10 +220,17 @@ const displayItems = () => {
 // removes items from cart after payment and reloads the page
 const removeFromCart = () => {
   let item = localStorage.clear();
-
   // reloads page
   location.reload();
 };
+
+// creates an alert after form data is submitted
+const payment = () => {
+  alert("Payment is Complete! Thanks For shopping with Mbhaco Designs!");
+// clears cart after the purchase
+  let item = localStorage.clear();
+  //location.reload();
+}
 
 // calling the function
 keepItemsOnbrowser();
