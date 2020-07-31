@@ -426,7 +426,8 @@ p .card-text {
   }
 
   .check-wrap{
-    width:91%;
+    width:84%;
+    font-size: 20px;
   }
 
   .footer {
@@ -437,5 +438,14 @@ p .card-text {
 
   .footer ul {
     margin-bottom: 20px;
+  }
+}
+
+@media(max-width:1300px){
+  .card-img-top{
+    height:400px;
+  }
+  .shop{
+    height: 100vh;
   }
 }
