@@ -1,3 +1,4 @@
+  
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,12 @@
 
 .bg-dark {
     background-color: #336!important;
+}
+
+.link{
+  font-size: 12px;
+  text-decoration: none;
+  color: #fff;
 }
 
 li a:hover {
@@ -168,8 +175,15 @@ p {
   background-repeat: no-repeat;
 }
 
+.check{
+  height: 100%;
+  background: url('./images/p.bg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .cart-bg {
-  height: 150vh;
+  height: 121vh;
   display: flex;
   background: url('./images/p.bg.jpg');
   background-size: cover;
@@ -183,7 +197,7 @@ p {
 }
 
 .shop-container {
-  height: 100vh;
+  height: 100%;
   background: url('./images/p.bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -192,7 +206,7 @@ p {
 .check-wrap{
     border-radius: 20px;
     margin: auto;
-    width: fit-content;
+    width: 45%;
     background: rgba(0, 0, 0, 0.8);
     box-sizing: border-box;
     padding: 40px;
@@ -262,6 +276,7 @@ form p {
   text-align: center;
 }
 
+
 /* cards and columns*/
 .box-element {
   box-shadow: hsl(0, 0%, 80%) 0 0 16px;
@@ -269,7 +284,7 @@ form p {
   color: #fff;
   border-radius: 4px;
   padding: 10px;
-  margin-bottom: 50px;
+  margin-top: 100px;
 }
 
 .thumbnail {
@@ -438,14 +453,5 @@ p .card-text {
 
   .footer ul {
     margin-bottom: 20px;
-  }
-}
-
-@media(max-width:1300px){
-  .card-img-top{
-    height:400px;
-  }
-  .shop{
-    height: 100vh;
   }
 }

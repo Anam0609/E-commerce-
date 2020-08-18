@@ -7,7 +7,7 @@ styles %}
   href="{{ url_for ('static', filename='main.css')}}"
 />
 {% endblock %} {% block content %}
-<div class="shop">
+<div class="check">
   <!--Content-->
   <h3 data-aos="fade-right" class="heading" style="color: #fff;">
     Customer Information
@@ -15,8 +15,7 @@ styles %}
 
   <div class="check-wrap" data-aos="flip-up">
     <form method="POST" action="/checkout">
-      {{form.hidden_tag()}} {{wtf.form_field(form.fullname)}}
-      {{wtf.form_field(form.email)}}
+      {{form.hidden_tag()}}
       <div id="delivery-info">
         <hr />
         <p>Delivery Information:</p>

@@ -199,7 +199,7 @@ const displayItems = () => {
       
         cartTotal.innerHTML += `
         <div class="total">
-        <tr>
+          <tr>
               <th>
                 <h5>Items: <strong>${item}</strong></h5>
               </th>
@@ -207,6 +207,7 @@ const displayItems = () => {
               <th>
                 <h5>Total: <strong>R${cart_total}</strong></h5>
               </th>
+             
           </tr>
         </div>
         `
@@ -228,6 +229,11 @@ const payment = () => {
 // clears cart after the purchase
   let item = localStorage.clear();
   //location.reload();
+}
+
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
 }
 
 // calling the function
