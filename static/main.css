@@ -276,7 +276,11 @@ form p {
   text-align: center;
 }
 
-
+a{
+  text-decoration: none;
+  color: #fff;
+  
+}
 /* cards and columns*/
 .box-element {
   box-shadow: hsl(0, 0%, 80%) 0 0 16px;
@@ -418,6 +422,10 @@ p .card-text {
 
   .banner .content p {
     font-size: 10px;
+  }
+
+  .shop-container{
+    height:100%;
   }
 
   .about {

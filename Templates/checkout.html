@@ -15,7 +15,8 @@ styles %}
 
   <div class="check-wrap" data-aos="flip-up">
     <form method="POST" action="/checkout">
-      {{form.hidden_tag()}}
+      {{form.hidden_tag()}} {{wtf.form_field(form.fullname)}}
+      {{wtf.form_field(form.email)}}
       <div id="delivery-info">
         <hr />
         <p>Delivery Information:</p>

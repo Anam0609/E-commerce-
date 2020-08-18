@@ -1,6 +1,6 @@
 # importing flask features
 from flask import Flask, render_template, redirect, url_for
-# importing bootstrap for wtf forms
+#importing bootstrap for wtf forms
 from flask_bootstrap import Bootstrap
 # uses the flask intergrated form
 from flask_wtf import FlaskForm
@@ -63,20 +63,46 @@ class LoginForm(FlaskForm):
 class RegisteForm(FlaskForm):
     #making sure that the fields are filled by the user and have the correct length
     username = StringField('Username', validators=[InputRequired(), Length(min=4, max=15)])
+    fullname = StringField('FullName', validators=[InputRequired(), Length(min=10, max=20)])
+    email = StringField('Email', validators=[InputRequired(), Email(message="Invalid email"),Length(max=30)])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
+
+ # the checkout form
+class CustomerForm(FlaskForm):
+  fullname = StringField('FullName', validators=[InputRequired(), Length(max=20)])
+  email = StringField('Email', validators=[InputRequired(), Email(message="Invalid email"),Length(max=30)])
+  address = db.Column(db.String(20), nullable=False)
+  province = db.Column(db.String(20), nullable=False)
+  city = db.Column(db.String(20), nullable=False)
+  zipcode = db.Column(db.String(8), nullable=False)
+
+#helps to identify the user who logged in
+@login_manager.user_loader
+def load_user(id):
+    return MyUsers.query.get(int(id))
+
+# classes for the login form
+class LoginForm(FlaskForm):
+    # making sure that the fields are filled by the user and have the correct length
+    username = StringField('Username', validators=[InputRequired(), Length(min=4, max=15)])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
+
+
+# classes for the register form
+class RegisteForm(FlaskForm):
+    #making sure that the fields are filled by the user and have the correct length
+    username = StringField('Username', validators=[InputRequired(), Length(min=4, max=15)])
     fullname = StringField('FullName', validators=[InputRequired(), Length(max=20)])
     email = StringField('Email', validators=[InputRequired(), Email(message="Invalid email"),Length(max=30)])
     password = PasswordField('Password', validators=[InputRequired(), Length(min=8, max=20)])
 
  # the checkout form
 class CustomerForm(FlaskForm):
+    fullname = StringField('FullName', validators=[InputRequired(), Length(max=20)])
+    email = StringField('Email', validators=[InputRequired(), Email(message="Invalid email"),Length(max=30)])
     address = StringField('Address', validators=[InputRequired(), Length(max=20)])
-    province = SelectField('Province', choices=['Western Cape', 'Eastern Cape','Northern Cape','NorthWest','Free State', 'Gauteng', 'Kwazulu Natal', 'Mpumalanga','Limpopo'])
-    city = SelectField('City', choices=['Bellville','Cape Town','Constantia','George','Hopefield','Oudtshoorn','Paarl','Simon’s Town','Stellenbosch','Swellendam','Worcester',
-    'Alice','Butterworth','East London','Graaff-Reinet','Grahamstown','King William’s Town','Mthatha','Port Elizabeth','Queenstown','Uitenhage','Zwelitsha','Kimberley',
-    'Kuruman','Port Nolloth','Klerksdorp','Mahikeng','Mmabatho','Potchefstroom','Rustenburg','Bethlehem','Bloemfontein','Jagersfontein','Kroonstad','Odendaalsrus','Parys','Phuthaditjhaba',
-    'Sasolburg','Virginia','Welkom','Benoni','Boksburg','Brakpan','Carletonville','Germiston','Johannesburg','Krugersdorp','Pretoria','Randburg','Randfontein','Roodepoort','Soweto','Springs',
-    'Vanderbijlpark','Vereeniging','Durban','Empangeni','Ladysmith','Newcastle','Pietermaritzburg','Pinetown','Ulundi','Umlazi','Emalahleni','Nelspruit','Secunda','Giyani','Lebowakgomo',
-    'Musina','Phalaborwa','Polokwane','Seshego','Sibasa','Thabazimbi'])
+    province = StringField('Province', validators=[InputRequired(), Length(max=20)])
+    city = StringField('City',validators=[InputRequired(), Length(max=20)])
     zipcode = StringField('Zipcode', validators=[InputRequired(), Length(max=20)])
     
  # app routes for my webpages

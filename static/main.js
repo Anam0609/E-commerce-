@@ -231,11 +231,11 @@ const payment = () => {
   //location.reload();
 }
 
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
+const myFunction = () => {
+  alert("Added to cart");
 }
 
 // calling the function
 keepItemsOnbrowser();
 displayItems();
+
