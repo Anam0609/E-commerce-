@@ -276,7 +276,11 @@ form p {
   text-align: center;
 }
 
-
+a{
+  text-decoration: none;
+  color: #fff;
+  
+}
 /* cards and columns*/
 .box-element {
   box-shadow: hsl(0, 0%, 80%) 0 0 16px;
